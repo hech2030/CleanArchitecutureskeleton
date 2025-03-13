@@ -1,5 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using Msc.DF.CommercialSchedules.Application.Common.Queries;
+using Skeleton.CleanArchitecture.Application.Common.Queries;
 using Skeleton.CleanArchitecture.Application.Patterns.RuleEngine.Interfaces;
 
 namespace Skeleton.CleanArchitecture.Application.Patterns.RuleEngine.Rules;

@@ -1,4 +1,4 @@
-﻿namespace Msc.DF.CommercialSchedules.Domain.Entities.Mappings;
+﻿namespace Skeleton.CleanArchitecture.Domain.Entities.Mappings;
 public class GetLocationMappingParams
 {
     public bool IsPort { get; set; }

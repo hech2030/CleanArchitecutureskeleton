@@ -1,7 +1,7 @@
-﻿using Msc.DF.CommercialSchedules.Infrastructure.HttpClients.Mdm;
-using Skeleton.CleanArchitecture.Application.Services.TokenBuilder;
+﻿using Skeleton.CleanArchitecture.Application.Services.TokenBuilder;
 using Skeleton.CleanArchitecture.DelegatingHandlers;
 using Skeleton.CleanArchitecture.Domain.Entities.Common.Options;
+using Skeleton.CleanArchitecture.Infrastructure.HttpClients.ExternalEndpoint;
 using Skeleton.CleanArchitecture.Infrastructure.HttpClients.Interfaces.Auth;
 using Skeleton.CleanArchitecture.Infrastructure.Interfaces;
 using System.Net.Http.Headers;
@@ -16,24 +16,24 @@ namespace Skeleton.CleanArchitecture.Extensions
             this IServiceCollection services)
         {
             ArgumentNullException.ThrowIfNull(services);
-            services.AddMdmHttpClient();
+            services.AddHttpClient();
             services.AddScoped<ITokenFactory, TokenFactory>();
             services.AddScoped<ExternalEndpointClientCredentialDelegatingHandler>();
             services.TryDecorate<IExternalHttpClient, ExternalEndpointHttpClientCacheDecorator>();
             return services;
         }
 
-        private static void AddMdmHttpClient(this IServiceCollection services)
+        private static void AddHttpClient(this IServiceCollection services)
         {
-            const string MdmClient = nameof(MdmClient);
+            const string client = nameof(client);
 
-            services.AddHttpClient(MdmClient)
-                .ConfigureHttpClient(CfgMdmClient)
+            services.AddHttpClient(client)
+                .ConfigureHttpClient(CfgClient)
                 .AddHttpMessageHandler<ExternalEndpointClientCredentialDelegatingHandler>()
                 .AddTypedClient<IExternalHttpClient, ExternalEndpointHttpClient>()
                 .AddStanderResilienceHandler();
 
-            static void CfgMdmClient(IServiceProvider provider, HttpClient client)
+            static void CfgClient(IServiceProvider provider, HttpClient client)
             {
                 var config = provider.GetRequiredService<ExternalEndpointConfiguration>();
                 client.BaseAddress = new Uri(config.ServiceBaseAddress);

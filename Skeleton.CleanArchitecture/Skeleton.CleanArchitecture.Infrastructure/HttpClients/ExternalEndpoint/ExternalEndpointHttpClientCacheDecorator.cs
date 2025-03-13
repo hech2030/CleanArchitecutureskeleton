@@ -3,7 +3,7 @@ using Skeleton.CleanArchitecture.Infrastructure.Helpers;
 using Skeleton.CleanArchitecture.Infrastructure.Interfaces;
 using ZiggyCreatures.Caching.Fusion;
 
-namespace Msc.DF.CommercialSchedules.Infrastructure.HttpClients.Mdm
+namespace Skeleton.CleanArchitecture.Infrastructure.HttpClients.ExternalEndpoint
 {
     public class ExternalEndpointHttpClientCacheDecorator : IExternalHttpClient
     {

@@ -1,4 +1,4 @@
-﻿using Msc.DF.CommercialSchedules.Application.Common.Queries;
+﻿using Skeleton.CleanArchitecture.Application.Common.Queries;
 
 namespace Skeleton.CleanArchitecture.Application.Patterns.RuleEngine.Interfaces;
 public interface IDateMappingRule

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Msc.DF.CommercialSchedules.Infrastructure.Interfaces.Validation;
+namespace Skeleton.CleanArchitecture.Infrastructure.Interfaces.Validation;
 public interface IValidationFailureResultFactory
 {
     Task<IActionResult> CreateResultAsync(HttpContext context, ValidationResult validationResult, CancellationToken cancellationToken);

@@ -10,7 +10,7 @@ namespace Skeleton.CleanArchitecture.DelegatingHandlers
     {
         private readonly ITokenFactory _tokenFactroy;
         private readonly ILogger<ExternalEndpointClientCredentialDelegatingHandler> _logger;
-        private TokenModel mdmToken;
+        private TokenModel myToken;
         private const string Bearer = nameof(Bearer);
         private readonly ExternalEndpointConfiguration config;
         private readonly SemaphoreSlim tokenLock = new(1);
@@ -38,14 +38,14 @@ namespace Skeleton.CleanArchitecture.DelegatingHandlers
             await tokenLock.WaitAsync(cancellationToken);
             try
             {
-                mdmToken = await _tokenFactroy.RefereshToken(mdmToken, config.Scope, cancellationToken);
+                myToken = await _tokenFactroy.RefereshToken(myToken, config.Scope, cancellationToken);
             }
             finally
             {
                 tokenLock.Release();
             }
 
-            request.Headers.Authorization = new AuthenticationHeaderValue(Bearer, mdmToken.AccessToken);
+            request.Headers.Authorization = new AuthenticationHeaderValue(Bearer, myToken.AccessToken);
             return await base.SendAsync(request, cancellationToken);
         }
     }

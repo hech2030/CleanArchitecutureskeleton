@@ -24,9 +24,6 @@ namespace Skeleton.CleanArchitecture.Domain.Entities.ExternalEndpoint
         [JsonPropertyName("CountrySubdivisionId")]
         public int? CountrySubdivisionId { get; set; }
 
-        [JsonPropertyName("MscRegionId")]
-        public string? MscRegionId { get; set; }
-
         [JsonPropertyName("Level")]
         public int? Level { get; set; }
 

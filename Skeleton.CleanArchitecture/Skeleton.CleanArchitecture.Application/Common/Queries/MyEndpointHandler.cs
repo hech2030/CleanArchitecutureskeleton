@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
-using Msc.DF.CommercialSchedules.Application.Common.Queries;
 using Skeleton.CleanArchitecture.Domain.Entities.MyEndpoint;
 using Skeleton.CleanArchitecture.Infrastructure.Interfaces;
 

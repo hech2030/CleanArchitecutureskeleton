@@ -1,4 +1,4 @@
-﻿namespace Msc.DF.CommercialSchedules.Domain.Entities.Mappings
+﻿namespace Skeleton.CleanArchitecture.Domain.Entities.Mappings
 {
     public record LocationResult(string FacilityCodeProvider, string FacilityCode, string UnLocationCode)
     {

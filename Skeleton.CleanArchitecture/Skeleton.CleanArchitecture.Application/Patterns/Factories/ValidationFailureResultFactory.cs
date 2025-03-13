@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Msc.DF.CommercialSchedules.Infrastructure.Interfaces.Validation;
+using Skeleton.CleanArchitecture.Infrastructure.Interfaces.Validation;
 
 namespace Skeleton.CleanArchitecture.Application.Patterns.Factories;
 

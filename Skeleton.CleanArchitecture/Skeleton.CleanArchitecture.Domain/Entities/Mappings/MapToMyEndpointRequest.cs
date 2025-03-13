@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Msc.DF.CommercialSchedules.Domain.Entities.Mappings;
+namespace Skeleton.CleanArchitecture.Domain.Entities.Mappings;
 [ExcludeFromCodeCoverage]
 public record MapMyEndpointRequest(
         string PlaceOfReceipt,

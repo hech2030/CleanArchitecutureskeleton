@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Msc.DF.CommercialSchedules.Application.Common.Queries;
+using Skeleton.CleanArchitecture.Application.Common.Queries;
 using Skeleton.CleanArchitecture.Domain.Entities.Common.Validation;
 
 namespace Skeleton.CleanArchitecture.Validation.PointToPoint

@@ -5,7 +5,7 @@ using Skeleton.CleanArchitecture.Domain.Entities.ExternalEndpoint;
 using Skeleton.CleanArchitecture.Infrastructure.HttpClients.Extensions;
 using Skeleton.CleanArchitecture.Infrastructure.Interfaces;
 
-namespace Msc.DF.CommercialSchedules.Infrastructure.HttpClients.Mdm;
+namespace Skeleton.CleanArchitecture.Infrastructure.HttpClients.ExternalEndpoint;
 public class ExternalEndpointHttpClient : IExternalHttpClient
 {
     protected readonly ILogger<ExternalEndpointHttpClient> _logger;
@@ -25,24 +25,24 @@ public class ExternalEndpointHttpClient : IExternalHttpClient
         _logger = logger;
     }
 
-    private Task<T> GetMdmResponse<T>(
+    private Task<T> GetResponse<T>(
         IDictionary<string, string> parameters,
-        string mdmEnpoint, CancellationToken
+        string externalEnpoint, CancellationToken
         cancellationToken) where T : class, new()
     {
-        using var requestMessage = RestClientExtension.PrepareEnhancedRequestMessage(HttpMethod.Get, mdmEnpoint, parameters);
-        return _httpClient.SendAndReadAsAsync(requestMessage, OnDeserializationMdmErrorAsync<T>, cancellationToken);
+        using var requestMessage = RestClientExtension.PrepareEnhancedRequestMessage(HttpMethod.Get, externalEnpoint, parameters);
+        return _httpClient.SendAndReadAsAsync(requestMessage, OnDeserializationErrorAsync<T>, cancellationToken);
     }
 
-    private Task<T> OnDeserializationMdmErrorAsync<T>(HttpResponseMessage resultMessage)
+    private Task<T> OnDeserializationErrorAsync<T>(HttpResponseMessage resultMessage)
     {
-        _logger.LogError("Recieved {StatusCode} from MDM", resultMessage.StatusCode);
+        _logger.LogError("Recieved {StatusCode} from external endpoint", resultMessage.StatusCode);
         return Task.FromResult(default(T)!);
     }
 
     Task<ExternalEndpointResponseMessage<Location>> IExternalHttpClient.GetLocation(string unlocationCode, CancellationToken cancellationToken)
     {
-        return GetMdmResponse<ExternalEndpointResponseMessage<Location>>(new Dictionary<string, string>
+        return GetResponse<ExternalEndpointResponseMessage<Location>>(new Dictionary<string, string>
         {
             ["UnLocationCode"] = unlocationCode
         }, _externalEndpointConfiguration.Endpoints.Location!, cancellationToken);

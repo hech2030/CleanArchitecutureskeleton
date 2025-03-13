@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Skeleton.CleanArchitecture.Domain.Entities.MyEndpoint;
 
-namespace Msc.DF.CommercialSchedules.Application.Common.Queries;
+namespace Skeleton.CleanArchitecture.Application.Common.Queries;
 public sealed class MyEndpointQuery : IRequest<MyEndpointResponse>
 {
     public string PlaceOfReceipt { get; set; } = string.Empty;
