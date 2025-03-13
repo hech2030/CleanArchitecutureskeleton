@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture/bin/Debug/net8.0
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture/obj
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Application/bin/Debug/net8.0
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Application/obj
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Domain/bin/Debug/net8.0
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Domain/obj
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Infrastructure/bin/Debug/net8.0
+/Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Infrastructure/obj
