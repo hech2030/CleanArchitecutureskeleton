@@ -1,0 +1,52 @@
+﻿using Microsoft.Extensions.Options;
+using Integrations.ModernService.Domain.Entities.Common.Auth;
+using Integrations.ModernService.Domain.Entities.Common.Options;
+using Integrations.ModernService.Infrastructure.HttpClients.Interfaces.Auth;
+using System.Net.Http.Headers;
+
+namespace Integrations.ModernService.DelegatingHandlers
+{
+    internal class ExternalEndpointClientCredentialDelegatingHandler : DelegatingHandler
+    {
+        private readonly ITokenFactory _tokenFactroy;
+        private readonly ILogger<ExternalEndpointClientCredentialDelegatingHandler> _logger;
+        private TokenModel myToken;
+        private const string Bearer = nameof(Bearer);
+        private readonly ExternalEndpointConfiguration config;
+        private readonly SemaphoreSlim tokenLock = new(1);
+        
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        public ExternalEndpointClientCredentialDelegatingHandler(IOptions<ExternalEndpointConfiguration> config, 
+                                                    ITokenFactory tokenFactroy,
+                                                    ILogger<ExternalEndpointClientCredentialDelegatingHandler> logger)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        {
+            ArgumentNullException.ThrowIfNull(config.Value);
+            ArgumentNullException.ThrowIfNull(tokenFactroy);
+            ArgumentNullException.ThrowIfNull(logger);
+
+            this.config = config.Value;
+            _tokenFactroy = tokenFactroy;
+            _logger = logger;
+        }
+
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            ArgumentNullException.ThrowIfNull(request);
+
+            await tokenLock.WaitAsync(cancellationToken);
+            try
+            {
+                myToken = await _tokenFactroy.RefereshToken(myToken, config.Scope, cancellationToken);
+            }
+            finally
+            {
+                tokenLock.Release();
+            }
+
+            request.Headers.Authorization = new AuthenticationHeaderValue(Bearer, myToken.AccessToken);
+            return await base.SendAsync(request, cancellationToken);
+        }
+    }
+}

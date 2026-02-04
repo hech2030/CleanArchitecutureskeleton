@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\createLogPath.sh" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\dd-dotnet.cmd" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\dd-dotnet.sh" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\Datadog.Linux.ApiWrapper.x64.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\Datadog.Profiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\Datadog.Trace.ClrProfiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\Datadog.Tracer.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\dd-dotnet" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\libddwaf.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-arm64\loader.conf" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\Datadog.Linux.ApiWrapper.x64.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\Datadog.Profiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\Datadog.Trace.ClrProfiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\Datadog.Tracer.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\dd-dotnet" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\libddwaf.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-arm64\loader.conf" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\Datadog.Linux.ApiWrapper.x64.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\Datadog.Profiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\Datadog.Trace.ClrProfiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\Datadog.Tracer.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\dd-dotnet" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\libddwaf.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-musl-x64\loader.conf" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\Datadog.Linux.ApiWrapper.x64.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\Datadog.Profiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\Datadog.Trace.ClrProfiler.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\Datadog.Tracer.Native.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\dd-dotnet" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\libddwaf.so" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\linux-x64\loader.conf" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net461\Datadog.Trace.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net461\Datadog.Trace.MSBuild.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net461\Datadog.Trace.MSBuild.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net461\Datadog.Trace.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net6.0\Datadog.Trace.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net6.0\Datadog.Trace.MSBuild.deps.json" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net6.0\Datadog.Trace.MSBuild.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net6.0\Datadog.Trace.MSBuild.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\net6.0\Datadog.Trace.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netcoreapp3.1\Datadog.Trace.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netcoreapp3.1\Datadog.Trace.MSBuild.deps.json" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netcoreapp3.1\Datadog.Trace.MSBuild.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netcoreapp3.1\Datadog.Trace.MSBuild.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netcoreapp3.1\Datadog.Trace.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\Datadog.Trace.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\Datadog.Trace.MSBuild.deps.json" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\Datadog.Trace.MSBuild.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\Datadog.Trace.MSBuild.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\Datadog.Trace.pdb" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\System.Reflection.Emit.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\System.Reflection.Emit.ILGeneration.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\System.Reflection.Emit.Lightweight.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\netstandard2.0\System.Threading.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\osx\Datadog.Trace.ClrProfiler.Native.dylib" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\osx\Datadog.Tracer.Native.dylib" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\osx\libddwaf.dylib" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\osx\loader.conf" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x64\Datadog.Profiler.Native.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x64\Datadog.Trace.ClrProfiler.Native.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x64\Datadog.Tracer.Native.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x64\dd-dotnet.exe" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x64\ddwaf.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x64\loader.conf" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x86\Datadog.Profiler.Native.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x86\Datadog.Trace.ClrProfiler.Native.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x86\Datadog.Tracer.Native.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x86\ddwaf.dll" />
+    <Content Remove="C:\Users\hamed\.nuget\packages\datadog.trace.bundle\3.12.0\contentFiles\any\any\datadog\win-x86\loader.conf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Publisher.Datadog" Version="9.0.0" />
+    <PackageReference Include="Datadog.Trace" Version="3.12.0" />
+    <PackageReference Include="Datadog.Trace.Bundle" Version="3.12.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.3.0" />
+    <PackageReference Include="Scrutor" Version="6.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Process" Version="3.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+    <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+    <PackageReference Include="Serilog.Exceptions.EntityFrameworkCore" Version="8.4.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="ZiggyCreatures.FusionCache" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Integrations.ModernService.Application\Integrations.ModernService.Application.csproj" />
+  </ItemGroup>
+
+</Project>
