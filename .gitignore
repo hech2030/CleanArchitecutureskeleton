@@ -12,3 +12,7 @@
 /Skeleton.CleanArchitecture/Skeleton.CleanArchitecture.Infrastructure/obj
 /Skeleton.CleanArchitecture/.vs/Skeleton.CleanArchitecture
 /.vs
+/Skeleton.CleanArchitecture/.vs/Integrations.ModernService
+/Skeleton.CleanArchitecture/Integrations.ModernService.Domain/bin/Debug/net8.0
+/Skeleton.CleanArchitecture/Integrations.ModernService.Domain/obj
+/Skeleton.CleanArchitecture/Integrations.ModernService.Infrastructure/obj
