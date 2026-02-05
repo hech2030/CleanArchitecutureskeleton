@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Integrations.ModernService.Infrastructure\Integrations.ModernService.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+
 </Project>

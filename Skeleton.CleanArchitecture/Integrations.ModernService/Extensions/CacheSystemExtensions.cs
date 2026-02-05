@@ -16,23 +16,19 @@ internal static class CacheSystemExtensions
         services.AddFusionCache()
                 .WithOptions(options =>
                 {
-                    options.DistributedCacheCircuitBreakerDuration = TimeSpan.FromSeconds(2);
                     options.FailSafeActivationLogLevel = LogLevel.Debug;
                     options.SerializationErrorsLogLevel = LogLevel.Warning;
-                    options.DistributedCacheSyntheticTimeoutsLogLevel = LogLevel.Debug;
-                    options.DistributedCacheErrorsLogLevel = LogLevel.Error;
                     options.FactorySyntheticTimeoutsLogLevel = LogLevel.Debug;
                     options.FactoryErrorsLogLevel = LogLevel.Error;
                 })
                 .WithDefaultEntryOptions(new FusionCacheEntryOptions
                 {
-                    Duration = fusionCacheConfiguration!.Duration,
-                    AllowBackgroundDistributedCacheOperations = true,
+                    Duration = TimeSpan.FromMinutes(10),
                     AllowBackgroundBackplaneOperations = true,
                     IsFailSafeEnabled = true,
-                    FailSafeMaxDuration = fusionCacheConfiguration!.FailSafeMaxDuration,
-                    FailSafeThrottleDuration = fusionCacheConfiguration!.FailSafeThrottleDuration,
-                    JitterMaxDuration = fusionCacheConfiguration!.JitterMaxDuration
+                    FailSafeMaxDuration = TimeSpan.FromMinutes(10),
+                    FailSafeThrottleDuration = TimeSpan.FromMinutes(10),
+                    JitterMaxDuration = TimeSpan.FromMinutes(10)
                 });
 
         return services;

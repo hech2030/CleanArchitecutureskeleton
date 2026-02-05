@@ -38,6 +38,8 @@ try
 }
 catch (Exception exception)
 {
+    Console.WriteLine("terminated unexpectedly");
+    Console.WriteLine(exception);
     Log.Fatal(exception, "{ApplicationName} terminated unexpectedly", ApiConstants.ApplicationName);
 }
 finally

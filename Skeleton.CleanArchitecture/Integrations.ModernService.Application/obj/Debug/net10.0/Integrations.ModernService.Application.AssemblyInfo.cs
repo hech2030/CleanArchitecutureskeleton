@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Integrations.ModernService.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fb6e22208b7d117b1595859e30d6f2124ad7569")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef864df9f3e462d6fbdc54ed93d72fed091def7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Integrations.ModernService.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Integrations.ModernService.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

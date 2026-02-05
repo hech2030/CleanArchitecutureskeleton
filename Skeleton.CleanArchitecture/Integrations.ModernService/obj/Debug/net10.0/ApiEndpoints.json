@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "Integrations.ModernService.Controllers.LinkedInRequisitionController",
+    "Method": "GetIntegrationStatus",
+    "RelativePath": "LinkedInRequisition",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requisitionId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

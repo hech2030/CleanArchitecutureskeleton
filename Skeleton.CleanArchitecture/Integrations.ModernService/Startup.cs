@@ -28,6 +28,9 @@ public sealed class Startup(IConfiguration configuration, IWebHostEnvironment ho
 
         services.AddCacheSystemInjection(configuration, hostEnvironment);
 
+        // Add infrastructure services (RabbitMQ, ..)
+        services.AddInfrastructure(configuration);
+
         services
             .AddControllers(options =>
             {
@@ -54,10 +57,9 @@ public sealed class Startup(IConfiguration configuration, IWebHostEnvironment ho
             .AddScoped<IValidatorInterceptor, ValidatorInterceptor>()
             .AddTransient<IValidationFailureResultFactory, ValidationFailureResultFactory>();
         services.AddBusinessInjection();
-        services.AddScoped<IMyEndpointService, MyEndpointService>();
 
         // Configure health checks.
-        services.AddHealthCheckServices(configuration);
+        //services.AddHealthCheckServices(configuration);
     }
 
     public static void Configure(WebApplication app)
@@ -81,6 +83,6 @@ public sealed class Startup(IConfiguration configuration, IWebHostEnvironment ho
         });
 
         app.MapControllers();
-        app.MapHealthChecks("/healthz");
+        //app.MapHealthChecks("/healthz");
     }
 }

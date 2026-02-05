@@ -1,8 +1,8 @@
-﻿using Integrations.ModernService.Application.Services.TokenBuilder;
+﻿using Integrations.ModernService.Application.Services;
 using Integrations.ModernService.DelegatingHandlers;
 using Integrations.ModernService.Domain.Entities.Common.Options;
 using Integrations.ModernService.Infrastructure.HttpClients.ExternalEndpoint;
-using Integrations.ModernService.Infrastructure.HttpClients.Interfaces.Auth;
+using Integrations.ModernService.Infrastructure.HttpClients.TokenBuilders.LinkedIn;
 using Integrations.ModernService.Infrastructure.Interfaces;
 using System.Net.Http.Headers;
 
@@ -17,25 +17,33 @@ namespace Integrations.ModernService.Extensions
         {
             ArgumentNullException.ThrowIfNull(services);
             services.AddHttpClient();
-            services.AddScoped<ITokenFactory, TokenFactory>();
-            services.AddScoped<ExternalEndpointClientCredentialDelegatingHandler>();
-            services.TryDecorate<IExternalHttpClient, ExternalEndpointHttpClientCacheDecorator>();
+            services.AddScoped<ILinkedInRetrieveTokenService, LinkedInRetrieveTokenService>();
+            services.AddScoped<LinkedInEndpointClientCredentialDelegatingHandler>();
+            services.AddScoped<ILinkedInIntegrationService, LinkedInIntegrationService>();
+            services.AddScoped<ILinkedinRequisitionService, LinkedinRequisitionService>();
+
+            ////services.TryDecorate<IExternalHttpClient, ExternalEndpointHttpClientCacheDecorator>();
             return services;
         }
 
         private static void AddHttpClient(this IServiceCollection services)
         {
+            const string authClient = nameof(authClient);
             const string client = nameof(client);
 
             services.AddHttpClient(client)
                 .ConfigureHttpClient(CfgClient)
-                .AddHttpMessageHandler<ExternalEndpointClientCredentialDelegatingHandler>()
-                .AddTypedClient<IExternalHttpClient, ExternalEndpointHttpClient>()
+                .AddHttpMessageHandler<LinkedInEndpointClientCredentialDelegatingHandler>()
+                .AddTypedClient<ILinkedInEndpointHttpClient, LinkedInEndpointHttpClient>()
                 .AddStanderResilienceHandler();
+                
+            services.AddHttpClient(authClient)
+                .ConfigureHttpClient(CfgClient)
+                .AddTypedClient<ILinkedInRetrieveTokenService, LinkedInRetrieveTokenService>();
 
             static void CfgClient(IServiceProvider provider, HttpClient client)
             {
-                var config = provider.GetRequiredService<ExternalEndpointConfiguration>();
+                var config = provider.GetRequiredService<LinkedInServiceEndpointConfiguration>();
                 client.BaseAddress = new Uri(config.ServiceBaseAddress);
 
                 client.DefaultRequestHeaders.ConnectionClose = true;

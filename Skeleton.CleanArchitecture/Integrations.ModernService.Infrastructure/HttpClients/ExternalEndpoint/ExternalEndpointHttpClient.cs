@@ -1,27 +1,29 @@
-﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Integrations.ModernService.Domain.Entities.Common.Options;
+﻿using Integrations.ModernService.Domain.Entities.Common.Options;
 using Integrations.ModernService.Domain.Entities.ExternalEndpoint;
 using Integrations.ModernService.Infrastructure.HttpClients.Extensions;
 using Integrations.ModernService.Infrastructure.Interfaces;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Integrations.ModernService.Domain.Entities.ExternalEndpoint.LinkedIn;
 
 namespace Integrations.ModernService.Infrastructure.HttpClients.ExternalEndpoint;
-public class ExternalEndpointHttpClient : IExternalHttpClient
+
+public class LinkedInEndpointHttpClient : ILinkedInEndpointHttpClient
 {
-    protected readonly ILogger<ExternalEndpointHttpClient> _logger;
+    protected readonly ILogger<LinkedInEndpointHttpClient> _logger;
     protected readonly HttpClient _httpClient;
-    protected readonly ExternalEndpointConfiguration _externalEndpointConfiguration;
-    public ExternalEndpointHttpClient(
+    protected readonly LinkedInServiceEndpointConfiguration _LinkedInEndpointConfiguration;
+    public LinkedInEndpointHttpClient(
        HttpClient httpClient,
-       IOptions<ExternalEndpointConfiguration> externalEndpointConfiguration,
-       ILogger<ExternalEndpointHttpClient> logger)
+       IOptions<LinkedInServiceEndpointConfiguration> LinkedInEndpointConfiguration,
+       ILogger<LinkedInEndpointHttpClient> logger)
     {
         ArgumentNullException.ThrowIfNull(httpClient);
-        ArgumentNullException.ThrowIfNull(externalEndpointConfiguration?.Value);
+        ArgumentNullException.ThrowIfNull(LinkedInEndpointConfiguration?.Value);
         ArgumentNullException.ThrowIfNull(logger);
 
         _httpClient = httpClient;
-        _externalEndpointConfiguration = externalEndpointConfiguration!.Value;
+        _LinkedInEndpointConfiguration = LinkedInEndpointConfiguration!.Value;
         _logger = logger;
     }
 
@@ -40,11 +42,30 @@ public class ExternalEndpointHttpClient : IExternalHttpClient
         return Task.FromResult(default(T)!);
     }
 
-    Task<ExternalEndpointResponseMessage<Location>> IExternalHttpClient.GetLocation(string unlocationCode, CancellationToken cancellationToken)
+    Task<ExternalEndpointResponseMessage<Location>> ILinkedInEndpointHttpClient.GetLocation(string unlocationCode, CancellationToken cancellationToken)
     {
         return GetResponse<ExternalEndpointResponseMessage<Location>>(new Dictionary<string, string>
         {
             ["UnLocationCode"] = unlocationCode
-        }, _externalEndpointConfiguration.Endpoints.Location!, cancellationToken);
+        }, _LinkedInEndpointConfiguration.Endpoints.JobRequisitions!, cancellationToken);
+    }
+
+    public async Task<string> GetIntegrationStatus(string integrationContext, string type, string tenant, CancellationToken cancellationToken)
+    {
+        var parameters = new Dictionary<string, string>
+        {
+            ["integrationContextValue"] = integrationContext,
+            ["integrationTypeValue"] = type,
+            ["tenantTypeValue"] = tenant
+        };
+        var response = await GetResponse<GetStatusResponse<IntegrationStatus>>(parameters,
+            _LinkedInEndpointConfiguration.Endpoints.IntegrationEnabled!,
+            cancellationToken);
+
+        if (response is not null && response.Results.Any())
+        {
+            return response.Results.First().Value.OnboardingStatus;
+        }
+        return string.Empty;
     }
 }
