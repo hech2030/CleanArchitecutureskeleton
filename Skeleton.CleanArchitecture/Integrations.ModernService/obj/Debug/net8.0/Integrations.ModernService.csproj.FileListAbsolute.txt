@@ -1,7 +1,0 @@
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.csproj.AssemblyReference.cache
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.AssemblyInfoInputs.cache
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.AssemblyInfo.cs
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.csproj.CoreCompileInputs.cache
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\hamed\source\repos\IntegrationModernService\Skeleton.CleanArchitecture\Integrations.ModernService\obj\Debug\net8.0\Integrations.ModernService.sourcelink.json
